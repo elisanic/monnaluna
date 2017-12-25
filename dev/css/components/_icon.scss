@@ -1,0 +1,139 @@
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  height: 100%;
+
+  &.icon-padding {
+    cursor: pointer;
+    width: 40px;
+    height: 50px;
+  }
+}
+
+.icon-menu {
+  display: block;
+  width: 14px;
+  height: 14px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  transition: $transition all;
+
+  span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: $black;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out all;
+
+    &:nth-child(1) {
+      top: 0;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      top: 6px;
+    }
+
+    &:nth-child(4) {
+      top: 12px;
+    }
+  }
+
+  @include mq($desktop) {
+    &:hover span {
+      background-color: $black;
+    }
+  }
+
+  &.is-open,
+  .window-active & {
+    width: 14px;
+  }
+
+  &.is-open span,
+  .window-active & span {
+    &:nth-child(1) {
+      top: 8px;
+      width: 0;
+      left: 50%;
+    }
+
+    &:nth-child(2) {
+      transform: rotate(45deg);
+    }
+
+    &:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+
+    &:nth-child(4) {
+      top: 8px;
+      width: 0;
+      left: 50%;
+    }
+  }
+}
+
+.icon-arrow {
+  display: block;
+  border: 2px solid $black;
+  width: 20px;
+  height: 20px;
+  transition: $transition all;
+  transform: rotate(45deg);
+
+  &.right {
+    border-width: 2px 2px 0 0;
+  }
+
+  &.left {
+    border-width: 0 0 2px 2px;
+  }
+
+  &.up {
+    border-width: 2px 0 0 2px;
+  }
+
+  &.down {
+    border-width: 0 2px 2px 0;
+  }
+  .is-active > &,
+  .is-active > .js-dropdown & {
+    transform: rotate(225deg);
+  }
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity:  1;
+  z-index: 1;
+  transition: $transition;
+
+  &:before {
+    display: none;
+  }
+}
+
+.slick-arrow.slick-disabled {
+  opacity:0;
+}
+
+.slick-prev {
+  left: 12px;
+}
+
+.slick-next {
+  right: 12px;
+}

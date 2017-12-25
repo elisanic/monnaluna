@@ -1,0 +1,43 @@
+.slider {
+  background-color: $gold-pale;
+  height: 500px;
+  overflow: hidden;
+  margin: 0 -12px 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: $transition;
+
+  &.slick-initialized {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include mq($tablet) {
+    max-height: 60vh;
+    height: 60vh;
+    margin: 0 0 12px;
+  }
+}
+
+.slide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba($artichoke,0.5);
+  padding: 0 12px;
+  text-align: center;
+  color: $white;
+
+  @include mq($tablet) {
+    text-align: right;
+    padding-right: 24px;
+  }
+}

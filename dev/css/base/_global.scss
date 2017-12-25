@@ -1,0 +1,60 @@
+a {
+  color: $gold;
+  text-decoration: none;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: transparent;
+    bottom: -3px;
+    transform: translateZ(0);
+    transition: $transition;
+  }
+
+  @include mq($desktop) {
+    &:hover:after {
+      bottom: 0;
+      background-color: $gold;
+    }
+  }
+}
+
+ul,
+p {
+  list-style: none;
+  margin: 10px 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.body {
+  color: $black;
+  background-color: $cool-neutral;
+  font-family: $sans;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.h1 {
+  font-family: $heading;
+  font-size: 28px;
+  text-align: center;
+  font-weight: 400;
+
+  @include mq($desktop) {
+    font-size: 36px;
+  }
+}
+
+.h2 {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

@@ -20,10 +20,15 @@
 }
 
 .slide {
+  height: 500px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include mq($tablet) {
+    height: 60vh;
+  }
 }
 
 .slide-body {

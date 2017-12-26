@@ -81,7 +81,9 @@
     height: 2px;
   }
 
-  &:hover:after {
-    background-color: $white;
+  @include mq($desktop) {
+    &:hover:after {
+      background-color: $white;
+    }
   }
 }

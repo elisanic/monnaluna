@@ -1,4 +1,6 @@
 .image-grid {
+  display: flex;
+  flex-wrap: wrap;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-row-gap: 12px;
@@ -14,8 +16,17 @@
 }
 
 .grid-item {
+  flex-basis: 50%;
   cursor: pointer;
   position: relative;
+
+  @include mq($tablet) {
+    flex-basis: 33.3%;
+  }
+
+  @include mq($desktop) {
+    flex-basis: 16.6%;
+  }
 }
 
 .grid-title {
